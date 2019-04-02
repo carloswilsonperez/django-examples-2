@@ -82,9 +82,36 @@ letters.append('z')
 print(letters)
 
 # Sorting a list
-sizes = [15, 6, 89, 34, 65, 35];
-print(sorted(sizes));
-print(sorted(sizes), reversed);
+sizes = [15, 6, 89, 34, 65, 35]
+print(sorted(sizes))
+print(sorted(sizes), reversed)
+
+# Removing list items
+colors = ["red", "green", "blue"]
+colors.pop() # removes last item
+
+colors = ["red", "green", "blue"]
+colors.pop(1) # removes "green" item
+
+colors = ["red", "green", "blue"]
+colors.remove("green") # removes "green" item
+
+colors = ["red", "green", "blue"]
+colors.clear() # removes all items
+
+# Ordering list items
+colors = ["red", "green", "blue"]
+colors.sort()
+colors.sort(reverse=True)
+
+# Getting list item index
+colors = ["red", "green", "blue"]
+print(colors.index("red"))
+
+# Counting the number of times an element is in a list
+colors = ["red", "green", "blue", "red"]
+print(colors.count("red"))
+
 
 # To add an item at the specified index, use the insert() method:
 
@@ -92,7 +119,7 @@ thislist = ["apple", "banana", "cherry"]
 thislist.insert(1, "orange")
 print(thislist)
 
-# joinin list items
+# joining list items
 # Only strings can be joined
 nautical_directions = "-".join(thislist)
 print(nautical_directions)
@@ -100,6 +127,9 @@ print(nautical_directions)
 # append() adds items at the end
 thislist.append("Bloody Python")
 print(thislist)
+
+# Convert a tuple to a list
+numbers_list = list((1, 2, 3, 4))
 
 # Loop Through a List
 
@@ -124,6 +154,14 @@ while sum(hand)  < 17:
 # SETS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 # A set is a mutable data structures
+colors = {"Red", "Green", "Blue"}
+print("#####################")
+print(type(colors)) # <class 'set'>
+print("Red" in colors)
+colors.add("Violet")
+colors.remove("Red")
+colors.clear()
+del colors
 
 # We can create a set from a list
 thislist = ["apple", "banana", "cherry"]
@@ -153,6 +191,11 @@ print(thisset)
 thisset = {"apple", "banana", "cherry"}
 del thisset
 
+locations = {
+    (12.344, 321.12): "Tokyo",
+    (44.344, -56.12): "New York"
+}
+
 
 
 # For sets, the pop( ) method removes a random element from the set
@@ -178,7 +221,20 @@ for x in thisset:
 
 
 
-# TUPLES :::::::::::::::::::::::::::::::::::::::::::::::::
+# TUPLES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+x = (1, 2, 3)
+print(x)
+print(type(x))
+print(dir(x))
+
+y = (1) # This is not considered a tuple
+print(type(y)) # <class 'int'>
+
+z = (1,)  # This is now a tuple
+
+x = (1, 2, 3)
+print(x[1])
 
 manifest = [("bananas", 15), ("mattresses", 24), ("dog kennels", 42), ("machine", 120), ("cheeses", 5)]
 
@@ -218,6 +274,8 @@ population = {'Shanghai': 17.8,
               'Istanbul': 13.3,
               'Karachi': 13.0,
               'Mumbai': 12.5}
+print(population.keys()) # dict_keys(['Shanghai', 'Istanbul', 'Karachi', 'Mumbai'])
+print(population.items()) #
 
 animals = {'dogs': [20, 10, 15, 8, 32, 15], 'cats': [3,4,2,8,2,4], 'rabbits': [2, 3, 3], 'fish': [0.3, 0.5, 0.8, 0.3, 1]}
 
